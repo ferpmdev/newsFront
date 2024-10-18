@@ -1,0 +1,31 @@
+.parent {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo opcional */
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0;
+  align-content: stretch;
+  justify-content: stretch;
+  padding: 2rem;
+}
+
+.sb {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 20;
+  display: flex;
+  gap: 1rem;
+}
