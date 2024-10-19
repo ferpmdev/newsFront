@@ -1,18 +1,19 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { ModNews1 } from './components/ModNews1/ModNews1';
 import { Dashboard } from './components/Dashboard/Dashboard';
 import { Alert } from './components/Alert/Alert';
 import './App.css'
-import { EditContext } from './context/EditContext';
 
 function App() {
-  const { initialState } = useContext(EditContext)
   const [showAlert, setShowAlert] = useState(false)
-  console.log(initialState)
 
   const handleAlert = () => {
     setShowAlert(!showAlert)
   }
+
+  const { notes } = useSelector((state) => state.news)
+  console.log(notes)
 
   return (
     <>
@@ -22,7 +23,7 @@ function App() {
           <h1>news</h1>
           <main className="container">
             {
-              initialState && initialState.map(item => (
+              notes && notes.map(item => (
                 <ModNews1 key={item.id} title={item.title} summary={item.summary} />
               ))
             }
