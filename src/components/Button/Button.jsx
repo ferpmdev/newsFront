@@ -1,12 +1,12 @@
 import './dashboard.css'
 
-export const Dashboard = ({showAlert, handleAlert, content}) => {
+export const Button = ({showAlert, onClickButton, content}) => {
 
 
   return (
     <>
     <div className='pd' >
-        <button className='bd' onClick={handleAlert}>
+        <button className='bd' onClick={onClickButton}>
             {content}
         </button>
     </div>
