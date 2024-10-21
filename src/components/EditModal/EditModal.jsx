@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { useModalStore } from '../../hooks/useModalStore';
+import { useSelector } from 'react-redux';
 
 const customStyles = {
     content: {
@@ -15,8 +16,8 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const EditModal = () => {
-    const { isEditModalOpen, closeEditModal } = useModalStore()
 
+    const { isEditModalOpen, closeEditModal } = useModalStore()
 
     const onCloseModal = () => {
         closeEditModal()
@@ -32,15 +33,9 @@ export const EditModal = () => {
                 overlayClassName="modal-fondo"
                 closeTimeoutMS={200}
             >
-                <h1>editar nota</h1>
-{/* 
-                <button
-                    onClick={closeEditModal}
-                    className="btn btn-outline-primary btn-block"
-                >
-                    <i className="far fa-save"></i>
-                    <span> cerrar</span>
-                </button> */}
+                <h1> Nueva nota </h1>
+                <hr />
+                <h1> Nueva nota </h1>
             </Modal>
         </>
     )

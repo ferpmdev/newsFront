@@ -1,6 +1,6 @@
 import './dashboard.css'
 
-export const Button = ({showAlert, onClickButton, content}) => {
+export const Button = ({onClickButton, content}) => {
 
 
   return (

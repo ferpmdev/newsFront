@@ -19,7 +19,6 @@ export const modalSlice = createSlice({
         },
 
         onEditOpenModal: (state ) => {
-            console.log('paso por onEditOpenModal')
             state.isEditModalOpen = true;
         },
         onEditCloseModal: (state) => {

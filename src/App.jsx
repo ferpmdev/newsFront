@@ -18,7 +18,6 @@ function App() {
   }
 
   const { notes } = useSelector((state) => state.news)
-  // const { onEditOpenModal } = useSelector((state) => state.modal)
   const { openEditModal } = useModalStore()
 
   return (
@@ -36,8 +35,9 @@ function App() {
             }
           </main>
           <nav className='sb'>
-            <Button content={'+'} showAlert={showAlert} onClickButton={handleAlert} />
-            <EditButton />
+            <Button content={'+'} onClickButton={handleAlert} />
+            <Button content={'+ sumar'} onClickButton={openEditModal} />
+            {/* <EditButton /> */}
             {/* <Button content={'edit'} showAlert={showAlert} onClickButton={openEditModal} /> */}
           </nav>
         </div>

@@ -5,7 +5,7 @@ export const useModalStore = () => {
 
     const dispatch = useDispatch()
 
-    const { isNewsModalOpen } = useSelector(state => state.modal)
+    const { isNewsModalOpen, isEditModalOpen } = useSelector(state => state.modal)
 
     const openNewsModal = () => {
         dispatch(onNewsOpenModal())
@@ -26,6 +26,7 @@ export const useModalStore = () => {
     return {
 
         //* Propiedades
+        isEditModalOpen,
         isNewsModalOpen,
         //* Metodos
         openEditModal,
