@@ -33,9 +33,49 @@ export const EditModal = () => {
                 overlayClassName="modal-fondo"
                 closeTimeoutMS={200}
             >
-                <h1> Nueva nota </h1>
+                <h1> Crea una nota nueva</h1>
                 <hr />
-                <h1> Nueva nota </h1>
+
+                <form className="container">
+
+                    <hr />
+                    <div className="form-group mb-2">
+                        <label>Titulo</label>
+                        <input
+                            type="text"
+                            className=''
+                            placeholder="Título del evento"
+                            name="title"
+                            autoComplete="off"
+                        // value={notes.title}
+                        // onChange={onInputChanged}
+                        />
+                        <small id="emailHelp" className="form-text text-muted">Una descripción corta</small>
+                    </div>
+
+                    <div className="form-group mb-2">
+                        <textarea
+                            type="text"
+                            className="form-control"
+                            placeholder="Sumario"
+                            rows="5"
+                            name="summary"
+                        // value={notes.summary}
+                        // onChange={onInputChanged}
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="btn btn-outline-primary btn-block"
+                        onClick={onCloseModal}
+                    >
+                        <i className="far fa-save"></i>
+                        <span> Crear </span>
+                    </button>
+
+                </form>
+
             </Modal>
         </>
     )

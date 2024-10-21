@@ -29,4 +29,19 @@ export const fakeData = [
         title: "item 6",
         summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
     },
+    {
+        id: 7,
+        title: "item 7",
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+    },
+    {
+        id: 8,
+        title: "item 8",
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+    },
+    {
+        id: 9,
+        title: "item 9",
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+    },
 ]

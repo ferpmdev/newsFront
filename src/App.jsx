@@ -7,7 +7,6 @@ import './App.css'
 import { NewsModal } from './components/NewsModal/NewsModal';
 import { useModalStore } from './hooks/useModalStore';
 import { EditModal } from './components/EditModal/EditModal';
-import { EditButton } from './components/EditButton/EditButton';
 
 function App() {
   const [showAlert, setShowAlert] = useState(false)
@@ -26,7 +25,8 @@ function App() {
         <div className='parent' >
           <NewsModal/>
           <EditModal/>
-          <h1>news</h1>
+          <hr />
+          <h1>Mis noticias</h1>
           <main className="container">
             {
               notes && notes.map(item => (
@@ -35,10 +35,7 @@ function App() {
             }
           </main>
           <nav className='sb'>
-            <Button content={'+'} onClickButton={handleAlert} />
-            <Button content={'+ sumar'} onClickButton={openEditModal} />
-            {/* <EditButton /> */}
-            {/* <Button content={'edit'} showAlert={showAlert} onClickButton={openEditModal} /> */}
+            <Button content={'+'} onClickButton={openEditModal} />
           </nav>
         </div>
     </>
