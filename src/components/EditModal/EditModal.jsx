@@ -33,7 +33,7 @@ export const EditModal = () => {
                 overlayClassName="modal-fondo"
                 closeTimeoutMS={200}
             >
-                <h1> Crea una nota nueva</h1>
+                <h1> Editar esta nota</h1>
                 <hr />
 
                 <form className="container">

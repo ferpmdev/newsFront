@@ -3,10 +3,10 @@ import './modNews.css';
 import { useModalStore } from '../../hooks/useModalStore';
 
 export const NewsModule1 = ({ id, title, summary }) => {
-    const { openNewsModal } = useModalStore()
+    const { openEditModal } = useModalStore()
 
     return (
-        <button onClick={openNewsModal} >
+        <button onClick={openEditModal} >
             <article className="itemNews">
                 <h1>{title}</h1>
                 <h4 className='summary' >{summary}</h4>

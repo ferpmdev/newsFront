@@ -7,7 +7,6 @@ const initialState = {
     isSaving: true,
     messageSave: '',
     posted: null,
-
 }
 
 export const newsSlice = createSlice({
@@ -17,20 +16,26 @@ export const newsSlice = createSlice({
         getOne: (state) => {
             state.news[0]
         },
-        createNote: (state, action) => {
+        // createNote: (state, action) => {
 
-        },
-        postNote: (state, action) => {
+        // },
+        // postNote: (state, action) => {
 
-        },
-        updateNote:  (state, action) => {
+        // },
+        // updateNote:  (state, action) => {
 
-        },
-        deleteNoteById:  (state, action) => {
+        // },
+        // deleteNoteById:  (state, action) => {
 
-        },
+        // },
 
     },
 })
 
-export const { getOne, createNote, postNote, updateNote, deleteNoteById } = newsSlice.actions
+export const { 
+    getOne, 
+    // createNote, 
+    // postNote, 
+    // updateNote, 
+    // deleteNoteById 
+} = newsSlice.actions

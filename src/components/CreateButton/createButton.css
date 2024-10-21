@@ -1,0 +1,17 @@
+.cb {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 5vw;
+    background-color: rgb(202, 36, 36);
+    color: rgb(224, 224, 223);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cb-h5 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+}

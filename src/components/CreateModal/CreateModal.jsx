@@ -17,18 +17,17 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const NewsModal = () => {
+export const CreateModal = () => {
 
-    const { isNewsModalOpen, closeNewsModal } = useModalStore()
+    const { isCreateModalOpen, closeCreateModal } = useModalStore()
     const { notes } = useSelector((state) => state.news)
 
 
     const onCloseModal = () => {
-        closeNewsModal()
+        closeCreateModal()
     }
 
     const onInputChanged = ({ target }) => {
-        console.log(target.value)
 
     }
 
@@ -48,7 +47,6 @@ export const NewsModal = () => {
         //     // TODO: 
         //     await startSavingEvent( formValues );
         closeDateModal();
-        console.log('se ejecutó closeNewsModal')
         //     setFormSubmitted(false);
     }
 
@@ -56,14 +54,15 @@ export const NewsModal = () => {
     return (
         <>
             <Modal
-                isOpen={isNewsModalOpen}
+                isOpen={isCreateModalOpen}
                 onRequestClose={onCloseModal}
                 style={customStyles}
                 className="modal"
                 overlayClassName="modal-fondo"
                 closeTimeoutMS={200}
             >
-                <h1> Nueva nota </h1>
+                <h1> Crea una nota nueva</h1>
+
                 <hr />
                 <form className="container">
 

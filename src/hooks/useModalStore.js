@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { onNewsOpenModal, onEditCloseModal, onEditOpenModal, onNewsCloseModal } from '../store'
+import { onCreateOpenModal, onEditCloseModal, onEditOpenModal, onCreateCloseModal } from '../store'
 
 export const useModalStore = () => {
 
     const dispatch = useDispatch()
 
-    const { isNewsModalOpen, isEditModalOpen } = useSelector(state => state.modal)
+    const { isCreateModalOpen, isEditModalOpen } = useSelector(state => state.modal)
 
-    const openNewsModal = () => {
-        dispatch(onNewsOpenModal())
+    const openCreateModal = () => {
+        dispatch(onCreateOpenModal())
     }
 
-    const closeNewsModal = () => {
-        dispatch(onNewsCloseModal())
+    const closeCreateModal = () => {
+        dispatch(onCreateCloseModal())
     }
 
     const openEditModal = () => {
@@ -27,12 +27,12 @@ export const useModalStore = () => {
 
         //* Propiedades
         isEditModalOpen,
-        isNewsModalOpen,
+        isCreateModalOpen,
         //* Metodos
         openEditModal,
         closeEditModal,
-        openNewsModal,
-        closeNewsModal
+        openCreateModal,
+        closeCreateModal
 
     }
 }

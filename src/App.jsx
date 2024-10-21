@@ -4,9 +4,10 @@ import { NewsModule1 } from './components/NewsModule1/NewsModule1';
 import { Button } from './components/Button/Button';
 import { Alert } from './components/Alert/Alert';
 import './App.css'
-import { NewsModal } from './components/NewsModal/NewsModal';
+import { CreateModal } from './components/CreateModal/CreateModal';
 import { useModalStore } from './hooks/useModalStore';
 import { EditModal } from './components/EditModal/EditModal';
+import { CreateButton } from './components/CreateButton/CreateButton';
 
 function App() {
   const [showAlert, setShowAlert] = useState(false)
@@ -17,13 +18,13 @@ function App() {
   }
 
   const { notes } = useSelector((state) => state.news)
-  const { openEditModal } = useModalStore()
+  const { openEditModal, openCreateModal } = useModalStore()
 
   return (
     <>
 
         <div className='parent' >
-          <NewsModal/>
+          <CreateModal/>
           <EditModal/>
           <hr />
           <h1>Mis noticias</h1>
@@ -35,7 +36,8 @@ function App() {
             }
           </main>
           <nav className='sb'>
-            <Button content={'+'} onClickButton={openEditModal} />
+            <CreateButton />
+            {/* <Button content={'+'} onClickButton={openCreateModal} /> */}
           </nav>
         </div>
     </>
