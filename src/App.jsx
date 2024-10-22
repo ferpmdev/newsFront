@@ -20,6 +20,8 @@ function App() {
   const { notes } = useSelector((state) => state.news)
   const { openEditModal, openCreateModal } = useModalStore()
 
+  console.log(notes)
+
   return (
     <>
 

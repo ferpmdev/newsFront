@@ -2,6 +2,7 @@ import Modal from 'react-modal';
 import { useModalStore } from '../../hooks/useModalStore';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import './createModal.css'
 
 
 const customStyles = {
@@ -61,42 +62,45 @@ export const CreateModal = () => {
                 overlayClassName="modal-fondo"
                 closeTimeoutMS={200}
             >
-                <h1> Crea una nota nueva</h1>
+                <h1 className='h1cm'> Crea una nota nueva</h1>
 
                 <hr />
-                <form className="container">
+                <form className="pcm">
 
-                    <hr />
-                    <div className="form-group mb-2">
-                        <label>Titulo</label>
-                        <input
-                            type="text"
-                            className=''
-                            placeholder="Título del evento"
-                            name="title"
-                            autoComplete="off"
-                            value={notes.title}
-                            onChange={onInputChanged}
-                        />
-                        <small id="emailHelp" className="form-text text-muted">Una descripción corta</small>
-                    </div>
+                    <input
+                        type="text"
+                        className='icm'
+                        placeholder="Título del evento"
+                        name="title"
+                        autoComplete="off"
+                        value={notes.title}
+                        onChange={onInputChanged}
+                    />
 
-                    <div className="form-group mb-2">
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            placeholder="Sumario"
-                            rows="5"
-                            name="summary"
-                            value={notes.summary}
-                            onChange={onInputChanged}
-                        ></textarea>
-                        <small id="emailHelp" className="form-text text-muted">Información adicional</small>
-                    </div>
+                    <input
+                        type="text"
+                        className='icm'
+                        placeholder="Link de la imagen"
+                        name="image"
+                        autoComplete="off"
+                        value={notes.image}
+                        onChange={onInputChanged}
+                    />
+
+
+                    <textarea
+                        type="text"
+                        className="icm"
+                        placeholder="Sumario"
+                        rows="5"
+                        name="summary"
+                        value={notes.summary}
+                        onChange={onInputChanged}
+                    ></textarea>
 
                     <button
                         type="submit"
-                        className="btn btn-outline-primary btn-block"
+                        className="icm"
                     >
                         <i className="far fa-save"></i>
                         <span> Guardar</span>

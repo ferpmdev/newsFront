@@ -13,8 +13,8 @@ export const newsSlice = createSlice({
     name: 'news',
     initialState,
     reducers: {
-        getOne: (state) => {
-            state.news[0]
+        getNews: (state) => {
+            state.notes
         },
         // createNote: (state, action) => {
 
@@ -33,7 +33,7 @@ export const newsSlice = createSlice({
 })
 
 export const { 
-    getOne, 
+    getNews, 
     // createNote, 
     // postNote, 
     // updateNote, 
