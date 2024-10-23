@@ -14,8 +14,6 @@ export const useArticleStore = () => {
     const startSavingArticle = async(articleEvent) => {
         //* TODO LLEGAR AL BACKEND
 
-
-
         // Todo bien
         if(articleEvent._id) {
             // actualizando
@@ -24,14 +22,11 @@ export const useArticleStore = () => {
         }else{
             // creando
             dispatch(createArticle({...articleEvent, _id: new Date().getTime()}))
-
         }
-
     }
 
     const startDeletingArticle = () => {
         // Todo: Llegar al backend
-
 
         dispatch( deleteArticle() );
     }

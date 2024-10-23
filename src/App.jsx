@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NewsModule1 } from './components/NewsModule1/NewsModule1';
 import './App.css'
-import { CreateModal } from './components/CreateModal/CreateModal';
+import { CreateModal } from './components/Modals/CreateModal/CreateModal';
 import { useModalStore } from './hooks/useModalStore';
-import { EditModal } from './components/EditModal/EditModal';
+import { EditModal } from './components/Modals/EditModal/EditModal';
 import { CreateButton } from './components/CreateButton/CreateButton';
 import { useArticleStore } from './hooks/useArticleStore';
 

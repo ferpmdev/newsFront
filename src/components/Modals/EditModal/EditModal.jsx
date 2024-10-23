@@ -1,7 +1,7 @@
 import Modal from 'react-modal';
-import { useModalStore } from '../../hooks/useModalStore';
+import { useModalStore } from '../../../hooks/useModalStore';
 import { useSelector } from 'react-redux';
-import { useArticleStore } from '../../hooks/useArticleStore';
+import { useArticleStore } from '../../../hooks/useArticleStore';
 import { useEffect, useState } from 'react';
 
 const customStyles = {
@@ -20,26 +20,20 @@ Modal.setAppElement('#root');
 export const EditModal = ({ handleStartEditArticle }) => {
 
     const { startSavingArticle, startDeletingArticle } = useArticleStore()
+    const { isEditModalOpen, closeEditModal } = useModalStore()
     const { OnEditArticle } = useSelector(state => state.article);
 
     const [formSubmitted, setFormSubmitted] = useState(false);
-
     const [formValues, setFormValues] = useState({
         title: '',
         notes: '',
     });
 
-
-
     useEffect(() => {
         if (OnEditArticle !== null) {
             setFormValues({ ...OnEditArticle });
         }
-
     }, [OnEditArticle])
-
-
-    const { isEditModalOpen, closeEditModal } = useModalStore()
 
     const onCloseModal = () => {
         closeEditModal()
@@ -62,7 +56,6 @@ export const EditModal = ({ handleStartEditArticle }) => {
 
         if (formValues.title.length <= 0) return;
 
-
         // TODO: 
         await startSavingArticle(formValues);
         closeEditModal();
@@ -83,7 +76,6 @@ export const EditModal = ({ handleStartEditArticle }) => {
                 <hr />
 
                 <h4 className='summary' >este es el {formValues._id}</h4>
-
 
                 <form className="container" onSubmit={onSubmit}>
 
@@ -121,7 +113,6 @@ export const EditModal = ({ handleStartEditArticle }) => {
                         <i className="far fa-save"></i>
                         <span> Guardar </span>
                     </button>
-
 
                     <button
                         className="btn btn-outline-primary btn-block"

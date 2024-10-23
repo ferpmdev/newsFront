@@ -1,9 +1,9 @@
 import Modal from 'react-modal';
-import { useModalStore } from '../../hooks/useModalStore';
+import { useModalStore } from '../../../hooks/useModalStore';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import './createModal.css'
-import { useArticleStore } from '../../hooks/useArticleStore';
+import { useArticleStore } from '../../../hooks/useArticleStore';
 
 
 const customStyles = {
@@ -20,20 +20,15 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const CreateModal = () => {
+    const { isCreateModalOpen, closeCreateModal } = useModalStore()
+    const { startSavingArticle } = useArticleStore()
 
+    const [ formSubmitted, setFormSubmitted ] = useState(false);
     const [formValues, setFormValues] = useState({
         title: '',
         summary: '',
         imageUrl: ''
     });
-
-    const [ formSubmitted, setFormSubmitted ] = useState(false);
-
-
-    const { isCreateModalOpen, closeCreateModal } = useModalStore()
-    const { startSavingArticle } = useArticleStore()
-    const { articles } = useSelector((state) => state.article)
-
 
     const onCloseModal = () => {
         closeCreateModal()
@@ -50,17 +45,9 @@ export const CreateModal = () => {
             event.preventDefault();
             setFormSubmitted(true);
 
-        //     const difference = differenceInSeconds( formValues.end, formValues.start );
-
-        //     if ( isNaN( difference ) || difference <= 0 ) {
-        //         Swal.fire('Fechas incorrectas','Revisar las fechas ingresadas','error');
-        //         return;
-        //     }
-
             if ( formValues.title.length <= 0 ) return;
 
         //     // TODO: 
-        console.log(formValues)
         await startSavingArticle( formValues );
         closeCreateModal();
             setFormSubmitted(false);
@@ -101,7 +88,6 @@ export const CreateModal = () => {
                         value={formValues.imageUrl}
                         onChange={onInputChanged}
                     />
-
 
                     <textarea
                         type="text"
