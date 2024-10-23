@@ -3,6 +3,7 @@ import { useModalStore } from '../../hooks/useModalStore';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import './createModal.css'
+import { useArticleStore } from '../../hooks/useArticleStore';
 
 
 const customStyles = {
@@ -20,8 +21,18 @@ Modal.setAppElement('#root');
 
 export const CreateModal = () => {
 
+    const [formValues, setFormValues] = useState({
+        title: '',
+        summary: '',
+        imageUrl: ''
+    });
+
+    const [ formSubmitted, setFormSubmitted ] = useState(false);
+
+
     const { isCreateModalOpen, closeCreateModal } = useModalStore()
-    const { notes } = useSelector((state) => state.news)
+    const { startSavingArticle } = useArticleStore()
+    const { articles } = useSelector((state) => state.article)
 
 
     const onCloseModal = () => {
@@ -29,12 +40,15 @@ export const CreateModal = () => {
     }
 
     const onInputChanged = ({ target }) => {
-
+        setFormValues({
+            ...formValues,
+            [target.name]: target.value
+        })
     }
 
     const onSubmit = async (event) => {
-        //     event.preventDefault();
-        //     setFormSubmitted(true);
+            event.preventDefault();
+            setFormSubmitted(true);
 
         //     const difference = differenceInSeconds( formValues.end, formValues.start );
 
@@ -43,12 +57,13 @@ export const CreateModal = () => {
         //         return;
         //     }
 
-        //     if ( formValues.title.length <= 0 ) return;
+            if ( formValues.title.length <= 0 ) return;
 
         //     // TODO: 
-        //     await startSavingEvent( formValues );
-        closeDateModal();
-        //     setFormSubmitted(false);
+        console.log(formValues)
+        await startSavingArticle( formValues );
+        closeCreateModal();
+            setFormSubmitted(false);
     }
 
 
@@ -65,7 +80,7 @@ export const CreateModal = () => {
                 <h1 className='h1cm'> Crea una nota nueva</h1>
 
                 <hr />
-                <form className="pcm">
+                <form onSubmit={onSubmit} className="pcm">
 
                     <input
                         type="text"
@@ -73,7 +88,7 @@ export const CreateModal = () => {
                         placeholder="Título del evento"
                         name="title"
                         autoComplete="off"
-                        value={notes.title}
+                        value={formValues.title}
                         onChange={onInputChanged}
                     />
 
@@ -81,9 +96,9 @@ export const CreateModal = () => {
                         type="text"
                         className='icm'
                         placeholder="Link de la imagen"
-                        name="image"
+                        name="imageUrl"
                         autoComplete="off"
-                        value={notes.image}
+                        value={formValues.imageUrl}
                         onChange={onInputChanged}
                     />
 
@@ -94,7 +109,7 @@ export const CreateModal = () => {
                         placeholder="Sumario"
                         rows="5"
                         name="summary"
-                        value={notes.summary}
+                        value={formValues.summary}
                         onChange={onInputChanged}
                     ></textarea>
 

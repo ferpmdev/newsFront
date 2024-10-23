@@ -1,3 +1,3 @@
 export * from './store'
-export * from './news/newsSlice'
+export * from './article/articleSlice'
 export * from './modal/modalSlice'

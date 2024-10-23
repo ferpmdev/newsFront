@@ -1,6 +1,8 @@
 import Modal from 'react-modal';
 import { useModalStore } from '../../hooks/useModalStore';
 import { useSelector } from 'react-redux';
+import { useArticleStore } from '../../hooks/useArticleStore';
+import { useEffect, useState } from 'react';
 
 const customStyles = {
     content: {
@@ -15,12 +17,56 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const EditModal = () => {
+export const EditModal = ({ handleStartEditArticle }) => {
+
+    const { startSavingArticle, startDeletingArticle } = useArticleStore()
+    const { OnEditArticle } = useSelector(state => state.article);
+
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
+    const [formValues, setFormValues] = useState({
+        title: '',
+        notes: '',
+    });
+
+
+
+    useEffect(() => {
+        if (OnEditArticle !== null) {
+            setFormValues({ ...OnEditArticle });
+        }
+
+    }, [OnEditArticle])
+
 
     const { isEditModalOpen, closeEditModal } = useModalStore()
 
     const onCloseModal = () => {
         closeEditModal()
+    }
+
+    const onInputChanged = ({ target }) => {
+        setFormValues({
+            ...formValues,
+            [target.name]: target.value
+        })
+    }
+
+    const handleDelete = () => {
+        startDeletingArticle();
+    }
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setFormSubmitted(true);
+
+        if (formValues.title.length <= 0) return;
+
+
+        // TODO: 
+        await startSavingArticle(formValues);
+        closeEditModal();
+        setFormSubmitted(false);
     }
 
     return (
@@ -36,7 +82,10 @@ export const EditModal = () => {
                 <h1> Editar esta nota</h1>
                 <hr />
 
-                <form className="container">
+                <h4 className='summary' >este es el {formValues._id}</h4>
+
+
+                <form className="container" onSubmit={onSubmit}>
 
                     <hr />
                     <div className="form-group mb-2">
@@ -47,8 +96,8 @@ export const EditModal = () => {
                             placeholder="Título del evento"
                             name="title"
                             autoComplete="off"
-                        // value={notes.title}
-                        // onChange={onInputChanged}
+                            value={formValues.title}
+                            onChange={onInputChanged}
                         />
                         <small id="emailHelp" className="form-text text-muted">Una descripción corta</small>
                     </div>
@@ -60,18 +109,26 @@ export const EditModal = () => {
                             placeholder="Sumario"
                             rows="5"
                             name="summary"
-                        // value={notes.summary}
-                        // onChange={onInputChanged}
+                            value={formValues.summary}
+                            onChange={onInputChanged}
                         ></textarea>
                     </div>
 
                     <button
                         type="submit"
                         className="btn btn-outline-primary btn-block"
-                        onClick={onCloseModal}
                     >
                         <i className="far fa-save"></i>
-                        <span> Crear </span>
+                        <span> Guardar </span>
+                    </button>
+
+
+                    <button
+                        className="btn btn-outline-primary btn-block"
+                        onClick={handleDelete}
+                    >
+                        <i className="far fa-save"></i>
+                        <span> Eliminar </span>
                     </button>
 
                 </form>

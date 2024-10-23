@@ -1,46 +1,62 @@
 export const fakeData = [
     {
-        id: 1,
+        _id: 1,
         title: "item uno",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 2,
+        _id: 2,
         title: "item 2",
-        summary: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old,"
+        summary: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 4,5 BC, making it over 2000 years old,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 3,
+        _id: 3,
         title: "item 3",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 4,
+        _id: 4,
         title: "item 4",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 5,
+        _id: 5,
         title: "item 5",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 6,
+        _id: 6,
         title: "item 6",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 7,
+        _id: 7,
         title: "item 7",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 8,
+        _id: 8,
         title: "item 8",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+
     },
     {
-        id: 9,
+        _id: 9,
         title: "item 9",
         summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
     },

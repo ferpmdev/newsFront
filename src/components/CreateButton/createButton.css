@@ -1,22 +1,26 @@
 .cb {
-    width: 5vw;
-    height: 5vw;
-    border-radius: 50%;
+    align-items: center;
     background-color: rgb(202, 36, 36);
+    border-radius: 50%;
     color: rgb(224, 224, 223);
     display: flex;
-    /* flex-direction: column; */
+    font-size: 3.2vw;
+    height: 5vw;
     justify-content: center;
-    align-items: center;
-    /* align-content: center; */
-    /* position: relative; */
+    width: 5vw;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
 }
 
-.cb-h5 {
-    /* position: relative; */
-    font-size: 3.2vw;
+.cb:hover {
+    background-color: rgb(108, 34, 34);
+}
+
+/* .cb-h5 {
     font-weight: 900;
     text-align: center;
     margin: 0;
-
-}
+} */

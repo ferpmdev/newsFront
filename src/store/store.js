@@ -1,13 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { newsSlice } from './news/newsSlice/'
+import { articleSlice } from './article/articleSlice'
 import { modalSlice } from './modal/modalSlice'
-import { counterSlice } from './counter/counterSlice'
 
 
 export const store = configureStore({
   reducer: {
-    news: newsSlice.reducer,
+    article: articleSlice.reducer,
     modal: modalSlice.reducer,
-    counter: counterSlice.reducer
   },
 })

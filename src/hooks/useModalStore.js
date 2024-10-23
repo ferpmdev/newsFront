@@ -32,7 +32,7 @@ export const useModalStore = () => {
         openEditModal,
         closeEditModal,
         openCreateModal,
-        closeCreateModal
+        closeCreateModal,
 
     }
 }
