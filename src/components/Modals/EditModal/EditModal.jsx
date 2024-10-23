@@ -3,6 +3,8 @@ import { useModalStore } from '../../../hooks/useModalStore';
 import { useSelector } from 'react-redux';
 import { useArticleStore } from '../../../hooks/useArticleStore';
 import { useEffect, useState } from 'react';
+import './editModal.css'
+
 
 const customStyles = {
     content: {
@@ -21,19 +23,19 @@ export const EditModal = ({ handleStartEditArticle }) => {
 
     const { startSavingArticle, startDeletingArticle } = useArticleStore()
     const { isEditModalOpen, closeEditModal } = useModalStore()
-    const { OnEditArticle } = useSelector(state => state.article);
+    const { onEditArticle } = useSelector(state => state.article);
 
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formValues, setFormValues] = useState({
         title: '',
-        notes: '',
+        summary: ''
     });
 
     useEffect(() => {
-        if (OnEditArticle !== null) {
-            setFormValues({ ...OnEditArticle });
+        if (onEditArticle !== null) {
+            setFormValues({ ...onEditArticle });
         }
-    }, [OnEditArticle])
+    }, [onEditArticle])
 
     const onCloseModal = () => {
         closeEditModal()
@@ -72,50 +74,61 @@ export const EditModal = ({ handleStartEditArticle }) => {
                 overlayClassName="modal-fondo"
                 closeTimeoutMS={200}
             >
-                <h1> Editar esta nota</h1>
+                <h1 className='h1cm'>  Editar esta nota</h1>
                 <hr />
 
-                <h4 className='summary' >este es el {formValues._id}</h4>
 
-                <form className="container" onSubmit={onSubmit}>
+                <form className="pcm" onSubmit={onSubmit}>
 
-                    <hr />
-                    <div className="form-group mb-2">
-                        <label>Titulo</label>
+                    <label className='lcm' >
+                        Titulo
                         <input
                             type="text"
-                            className=''
+                            className='icm'
                             placeholder="Título del evento"
                             name="title"
                             autoComplete="off"
                             value={formValues.title}
                             onChange={onInputChanged}
                         />
-                        <small id="emailHelp" className="form-text text-muted">Una descripción corta</small>
-                    </div>
+                    </label>
 
-                    <div className="form-group mb-2">
+                    <label className='lcm' >
+                        Url de la imagen
+                        <input
+                            type="text"
+                            className='icm'
+                            placeholder="Url de la imagen"
+                            name="imageUrl"
+                            autoComplete="off"
+                            value={formValues.imageUrl}
+                            onChange={onInputChanged}
+                        />
+                    </label>
+
+                    <label className='lcm' >
+                        Sumario
                         <textarea
                             type="text"
-                            className="form-control"
+                            className="icm"
                             placeholder="Sumario"
                             rows="5"
                             name="summary"
                             value={formValues.summary}
                             onChange={onInputChanged}
                         ></textarea>
-                    </div>
+                    </label>
 
                     <button
                         type="submit"
-                        className="btn btn-outline-primary btn-block"
+                        className="btn btn-outline-primary btn-block icm"
                     >
                         <i className="far fa-save"></i>
                         <span> Guardar </span>
                     </button>
 
                     <button
-                        className="btn btn-outline-primary btn-block"
+                        className="btn btn-outline-primary btn-block icm"
                         onClick={handleDelete}
                     >
                         <i className="far fa-save"></i>

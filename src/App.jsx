@@ -17,10 +17,11 @@ function App() {
     starEditArticle(article)
   }
 
-  // const {articles} = useSelector((state) => state.article)
+  const {articles} = useSelector((state) => state.article)
   const { openEditModal, openCreateModal } = useModalStore()
 
-  const {starEditArticle, articles } = useArticleStore()
+  const {starEditArticle } = useArticleStore()
+
 
   return (
     <>

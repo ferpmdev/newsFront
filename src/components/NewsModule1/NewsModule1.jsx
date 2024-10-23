@@ -9,13 +9,11 @@ export const NewsModule1 = ({ title, summary, imageUrl, _id }) => {
 
     const handleClickEdit = () => {
         startEditArticle({
-            isSaving: true,
-            messageSave: '',
             title: title,
             summary: summary,
             imageUrl: imageUrl,
             _id: _id,
-            OnEditArticle: true,
+            onEditArticle: true,
         });
         openEditModal();
     }

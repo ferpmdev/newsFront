@@ -1,6 +1,5 @@
 import Modal from 'react-modal';
 import { useModalStore } from '../../../hooks/useModalStore';
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import './createModal.css'
 import { useArticleStore } from '../../../hooks/useArticleStore';
@@ -23,7 +22,7 @@ export const CreateModal = () => {
     const { isCreateModalOpen, closeCreateModal } = useModalStore()
     const { startSavingArticle } = useArticleStore()
 
-    const [ formSubmitted, setFormSubmitted ] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
     const [formValues, setFormValues] = useState({
         title: '',
         summary: '',
@@ -42,15 +41,22 @@ export const CreateModal = () => {
     }
 
     const onSubmit = async (event) => {
-            event.preventDefault();
-            setFormSubmitted(true);
+        event.preventDefault();
+        setFormSubmitted(true);
 
-            if ( formValues.title.length <= 0 ) return;
+        if (formValues.title.length <= 0) return;
+        if (formValues.summary.length <= 0) return;
+        if (formValues.imageUrl.length <= 0) return;
 
         //     // TODO: 
-        await startSavingArticle( formValues );
+        await startSavingArticle(formValues);
         closeCreateModal();
-            setFormSubmitted(false);
+        setFormSubmitted(false);
+        setFormValues({
+            title: '',
+            summary: '',
+            imageUrl: ''
+        })
     }
 
 
@@ -79,29 +85,37 @@ export const CreateModal = () => {
                         onChange={onInputChanged}
                     />
 
-                    <input
-                        type="text"
-                        className='icm'
-                        placeholder="Link de la imagen"
-                        name="imageUrl"
-                        autoComplete="off"
-                        value={formValues.imageUrl}
-                        onChange={onInputChanged}
-                    />
+                    <label className='lcm' >
+                        Url de la imagen
 
-                    <textarea
-                        type="text"
-                        className="icm"
-                        placeholder="Sumario"
-                        rows="5"
-                        name="summary"
-                        value={formValues.summary}
-                        onChange={onInputChanged}
-                    ></textarea>
+                        <input
+                            type="text"
+                            className='icm'
+                            placeholder="Url de la imagen"
+                            name="imageUrl"
+                            autoComplete="off"
+                            value={formValues.imageUrl}
+                            onChange={onInputChanged}
+                        />
+                    </label>
+
+                    <label className='lcm' >
+                        Sumario
+
+                        <textarea
+                            type="text"
+                            className="icm"
+                            placeholder="Sumario"
+                            rows="5"
+                            name="summary"
+                            value={formValues.summary}
+                            onChange={onInputChanged}
+                        ></textarea>
+                    </label>
 
                     <button
                         type="submit"
-                        className="icm"
+                        className="btn btn-outline-primary btn-block icm"
                     >
                         <i className="far fa-save"></i>
                         <span> Guardar</span>

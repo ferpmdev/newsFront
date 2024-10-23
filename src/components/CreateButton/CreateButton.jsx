@@ -9,13 +9,10 @@ export const CreateButton = () => {
 
   const handleClickNew = () => {
     startEditArticle({
-      isSaving: true,
-      messageSave: '',
-
         title: '',
         summary: '',
-        imageUrl: '#fafafa',
-        OnEditArticle: true,
+        imageUrl: '',
+        onEditArticle: true,
     });
     openCreateModal();
 }

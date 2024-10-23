@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { articleSlice } from './article/articleSlice'
-import { modalSlice } from './modal/modalSlice'
+import { articleSlice } from './slices/article/articleSlice'
+import { modalSlice } from './slices/modal/modalSlice'
 
 
 export const store = configureStore({

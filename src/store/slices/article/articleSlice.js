@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fakeData } from '../../fakeData/fakedata'
+import { fakeData } from '../../../fakeData/fakedata'
 
 const tempArticle = {
     _id: new Date().getTime(),
@@ -10,13 +10,11 @@ const tempArticle = {
 
 
 const initialState = {
-    isSaving: true,
     articles: [
         ...fakeData,
         tempArticle
     ],
-    messageSave: '',
-    OnEditArticle: null,
+    onEditArticle: null,
 }
 
 export const articleSlice = createSlice({
@@ -24,11 +22,12 @@ export const articleSlice = createSlice({
     initialState,
     reducers: {
         onSetEditArticle: (state, { payload }) => {
-            state.OnEditArticle = payload
+            state.onEditArticle = payload
         },
 
         createArticle: (state, { payload }) => {
             state.articles.push(payload);
+            state.onEditArticle = null
         },
 
         updateArticle: ( state, { payload } ) => {
@@ -43,7 +42,7 @@ export const articleSlice = createSlice({
 
         deleteArticle: ( state ) => {
             if ( state.articles ) {
-                state.articles = state.articles.filter( article => article._id !== state.OnEditArticle._id );
+                state.articles = state.articles.filter( article => article._id !== state.onEditArticle._id );
             }
         }
 

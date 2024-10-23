@@ -5,7 +5,7 @@ export const useArticleStore = () => {
 
     const dispatch = useDispatch()
 
-    const { articles } = useSelector(state => state.article);
+    const { articles, onEditArticle } = useSelector(state => state.article);
 
     const startEditArticle = (articleEvent) => {
         dispatch(onSetEditArticle(articleEvent))
@@ -35,6 +35,7 @@ export const useArticleStore = () => {
 
         //* Propiedades
         articles,
+        onEditArticle,
 
         //* Metodos
         startEditArticle,
