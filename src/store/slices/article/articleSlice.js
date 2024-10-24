@@ -40,8 +40,9 @@ export const articleSlice = createSlice({
         },
 
         deleteArticle: ( state ) => {
-            if ( state.articles ) {
+            if ( state.onEditArticle ) {
                 state.articles = state.articles.filter( article => article._id !== state.onEditArticle._id );
+                state.onEditArticle = null
             }
         }
 

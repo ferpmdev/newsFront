@@ -28,7 +28,8 @@ export const EditModal = ({ handleStartEditArticle }) => {
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formValues, setFormValues] = useState({
         title: '',
-        summary: ''
+        summary: '',
+        imageUrl: ''
     });
 
     useEffect(() => {
@@ -119,21 +120,23 @@ export const EditModal = ({ handleStartEditArticle }) => {
                         ></textarea>
                     </label>
 
-                    <button
-                        type="submit"
-                        className="btn btn-outline-primary btn-block icm"
-                    >
-                        <i className="far fa-save"></i>
-                        <span> Guardar </span>
-                    </button>
-
-                    <button
-                        className="btn btn-outline-primary btn-block icm"
-                        onClick={handleDelete}
-                    >
-                        <i className="fas fa-trash-alt"></i>
-                        <span> Eliminar </span>
-                    </button>
+                    <div className='cem-btn' >
+                        <button
+                            className="btn btn-outline-primary btn-block icm"
+                            onClick={handleDelete}
+                        >
+                            <i className="fas fa-trash-alt"></i>
+                            <span> Eliminar </span>
+                        </button>
+                        
+                        <button
+                            type="submit"
+                            className="btn btn-outline-primary btn-block icm"
+                        >
+                            <i className="far fa-save"></i>
+                            <span> Guardar </span>
+                        </button>
+                    </div>
 
                 </form>
 
