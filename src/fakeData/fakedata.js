@@ -3,7 +3,7 @@ export const fakeData = [
         _id: 1,
         title: "item uno",
         summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
-            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+            imageUrl: 'https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4',
 
     },
     {
@@ -17,7 +17,7 @@ export const fakeData = [
         _id: 3,
         title: "item 3",
         summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
-            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
+            imageUrl: 'https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s',
 
     },
     {
@@ -53,11 +53,12 @@ export const fakeData = [
         title: "item 8",
         summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
             imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
-
-    },
-    {
-        _id: 9,
-        title: "item 9",
-        summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,"
+            
+        },
+        {
+            _id: 9,
+            title: "item 9",
+            summary: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,",
+            imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg',
     },
 ]

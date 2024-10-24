@@ -35,7 +35,6 @@ export const articleSlice = createSlice({
                 if ( article._id === payload._id ) {
                     return payload;
                 }
-
                 return article;
             });
         },

@@ -131,7 +131,7 @@ export const EditModal = ({ handleStartEditArticle }) => {
                         className="btn btn-outline-primary btn-block icm"
                         onClick={handleDelete}
                     >
-                        <i className="far fa-save"></i>
+                        <i className="fas fa-trash-alt"></i>
                         <span> Eliminar </span>
                     </button>
 
