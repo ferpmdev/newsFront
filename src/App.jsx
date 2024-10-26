@@ -7,6 +7,7 @@ import { EditModal } from './components/Modals/EditModal/EditModal';
 import { CreateButton } from './components/CreateButton/CreateButton';
 import { useArticleStore } from './hooks/useArticleStore';
 import { ArticleModule1 } from './components/ArticleModule1/ArticleModule1';
+import { getEnvVariables } from './helpers/getEnvVariables';
 
 function App() {
   const [showAlert, setShowAlert] = useState(false)
