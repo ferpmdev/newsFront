@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import './App.css'
-import { CreateModal } from './components/Modals/CreateModal/CreateModal';
-import { useModalStore } from './hooks/useModalStore';
-import { EditModal } from './components/Modals/EditModal/EditModal';
-import { CreateButton } from './components/CreateButton/CreateButton';
-import { useArticleStore } from './hooks/useArticleStore';
-import { ArticleModule1 } from './components/ArticleModule1/ArticleModule1';
-import { getEnvVariables } from './helpers/getEnvVariables';
+import './newspaper.css'
+import { CreateModal } from '../components/Modals/CreateModal/CreateModal';
+import { useModalStore } from '../hooks/useModalStore';
+import { EditModal } from '../components/Modals/EditModal/EditModal';
+import { CreateButton } from '../components/CreateButton/CreateButton';
+import { useArticleStore } from '../hooks/useArticleStore';
+import { ArticleModule1 } from '../components/ArticleModule1/ArticleModule1';
+import { getEnvVariables } from '../helpers/getEnvVariables';
 
-function App() {
+export const Newspaper = () => {
   const [showAlert, setShowAlert] = useState(false)
 
   const handleStartEditArticle = (article) => {
@@ -41,5 +41,3 @@ function App() {
     </>
   )
 }
-
-export default App
