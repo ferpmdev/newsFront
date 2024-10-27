@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import './newspaper.css'
 import { CreateModal } from '../components/Modals/CreateModal/CreateModal';
 import { useModalStore } from '../hooks/useModalStore';
@@ -7,7 +7,6 @@ import { EditModal } from '../components/Modals/EditModal/EditModal';
 import { CreateButton } from '../components/CreateButton/CreateButton';
 import { useArticleStore } from '../hooks/useArticleStore';
 import { ArticleModule1 } from '../components/ArticleModule1/ArticleModule1';
-import { getEnvVariables } from '../helpers/getEnvVariables';
 import { Navbar } from '../components/Navbar/Navbar';
 
 export const Newspaper = () => {
@@ -24,8 +23,6 @@ export const Newspaper = () => {
     startLodingsArticles()
   }, [])
 
-  console.log(articles)
-  
 
   return (
     <>

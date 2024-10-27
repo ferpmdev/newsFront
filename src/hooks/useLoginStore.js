@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import newsApi from '../api/newsApi';
 // import { clearErrorMessage, onChecking, onLogin, onLogout } from '../store';
-import { onChecking, onLogin, onLogout, onClear } from '../store';
+import { onChecking, onLogin, onLogout, onClear, logOutNewspaper } from '../store';
 
 
 export const useLoginStore = () => {
@@ -43,6 +43,7 @@ export const useLoginStore = () => {
 
     const startLogout = () => {
         localStorage.clear();
+        dispatch(logOutNewspaper());
         dispatch(onLogout());
     }
 

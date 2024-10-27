@@ -46,13 +46,19 @@ export const articleSlice = createSlice({
             })
         },
 
-    },
-})
+        logOutNewspaper: ( state ) => {
+            state.isLoadingArticles = true,
+            state.articles = [],
+            state.onEditArticle = null
+        }
+    }
+});
 
 export const {
-    setEditArticle,
     createArticle,
-    updateArticle,
     deleteArticle,
-    loadArticles
+    loadArticles,
+    logOutNewspaper,
+    setEditArticle,
+    updateArticle,
 } = articleSlice.actions
