@@ -8,6 +8,7 @@ import { CreateButton } from '../components/CreateButton/CreateButton';
 import { useArticleStore } from '../hooks/useArticleStore';
 import { ArticleModule1 } from '../components/ArticleModule1/ArticleModule1';
 import { getEnvVariables } from '../helpers/getEnvVariables';
+import { Navbar } from '../components/Navbar/Navbar';
 
 export const Newspaper = () => {
   const [showAlert, setShowAlert] = useState(false)
@@ -26,6 +27,7 @@ export const Newspaper = () => {
       <div className='parent' >
         <CreateModal />
         <EditModal handleStartEditArticle={handleStartEditArticle} />
+        <Navbar />
         <hr />
         <h1 className='pt-serif-bold '>The Last News</h1>
         <hr className='custom-hr' />
