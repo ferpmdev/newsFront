@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import { calendarApi } from '../api';
+import newsApi from '../api/newsApi';
 // import { clearErrorMessage, onChecking, onLogin, onLogout } from '../store';
+import { onChecking, onLogin, onLogout, onClear } from '../store';
 
 
 export const useLoginStore = () => {
@@ -9,39 +10,40 @@ export const useLoginStore = () => {
     const dispatch = useDispatch();
 
     const startLogin = async({ email, password }) => {
-        // dispatch( onChecking() );
-        // try {
-        //     const { data } = await calendarApi.post('/auth',{ email, password });
-        //     localStorage.setItem('token', data.token );
-        //     localStorage.setItem('token-init-date', new Date().getTime() );
-        //     dispatch( onLogin({ name: data.name, uid: data.uid }) );
+        dispatch( onChecking() );
+        try {
+            const { data } = await newsApi.post('/auth',{ email, password });
+            localStorage.setItem('token', data.token );
+            localStorage.setItem('token-init-date', new Date().getTime() );
+            dispatch( onLogin({ name: data.name, uid: data.uid }) );
             
-        // } catch (error) {
-        //     dispatch( onLogout('Credenciales incorrectas') );
-        //     setTimeout(() => {
-        //         dispatch( clearErrorMessage() );
-        //     }, 10);
-        // }
+        } catch (error) {
+            console.log({error})
+            dispatch( onLogout('Credenciales incorrectas') );
+            setTimeout(() => {
+                dispatch( onClear() );
+            }, 30);
+        }
     }
 
     const checkAuthToken = async() => {
-        // const token = localStorage.getItem('token');
-        // if ( !token ) return dispatch( onLogout() );
+        const token = localStorage.getItem('token');
+        if ( !token ) return dispatch( onLogout() );
 
-        // try {
-        //     const { data } = await calendarApi.get('auth/renew');
-        //     localStorage.setItem('token', data.token );
-        //     localStorage.setItem('token-init-date', new Date().getTime() );
-        //     dispatch( onLogin({ name: data.name, uid: data.uid }) );
-        // } catch (error) {
-        //     localStorage.clear();
-        //     dispatch( onLogout() );
-        // }
+        try {
+            const { data } = await newsApi.get('auth/renew');
+            localStorage.setItem('token', data.token );
+            localStorage.setItem('token-init-date', new Date().getTime() );
+            dispatch( onLogin({ name: data.name, uid: data.uid }) );
+        } catch (error) {
+            localStorage.clear();
+            dispatch( onLogout() );
+        }
     }
 
     const startLogout = () => {
-        // localStorage.clear();
-        // dispatch(onLogout());
+        localStorage.clear();
+        dispatch(onLogout());
     }
 
     return {
