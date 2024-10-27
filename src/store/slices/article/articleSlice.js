@@ -16,13 +16,12 @@ export const articleSlice = createSlice({
 
         createArticle: (state, { payload }) => {
             state.articles.push(payload);
-            console.log(payload)
             state.onEditArticle = null
         },
 
         updateArticle: ( state, { payload } ) => {
             state.articles = state.articles.map( article => {
-                if ( article._id === payload._id ) {
+                if ( article.id === payload.id ) {
                     return payload;
                 }
                 return article;
@@ -31,7 +30,7 @@ export const articleSlice = createSlice({
 
         deleteArticle: ( state ) => {
             if ( state.onEditArticle ) {
-                state.articles = state.articles.filter( article => article._id !== state.onEditArticle._id );
+                state.articles = state.articles.filter( article => article.id !== state.onEditArticle.id );
                 state.onEditArticle = null
             }
         },

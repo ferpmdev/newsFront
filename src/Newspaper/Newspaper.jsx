@@ -39,7 +39,7 @@ export const Newspaper = () => {
         <main className="container">
           {
             articles && articles.map(item => (
-              <ArticleModule1 key={item.id} title={item.title} summary={item.summary} _id={item._id} imageUrl={item.imageUrl} />
+              <ArticleModule1 key={item.id} title={item.title} summary={item.summary} id={item.id} imageUrl={item.imageUrl} />
             ))
           }
         </main>

@@ -17,14 +17,14 @@ export const useArticleStore = () => {
         //* TODO update article
 
         // Todo bien
-        if(articleEvent._id) {
+        if(articleEvent.id) {
             // actualizando
             dispatch( updateArticle({ ...articleEvent }) );
 
         }else{
             // creando
             const { data } = await newsApi.post('/articles', articleEvent)
-            dispatch(createArticle({...articleEvent, _id: data.article.id, user }))
+            dispatch(createArticle({...articleEvent, id: data.article.id, user }))
         }
     }
 
