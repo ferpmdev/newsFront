@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import './newspaper.css'
 import { CreateModal } from '../components/Modals/CreateModal/CreateModal';
@@ -11,16 +11,21 @@ import { getEnvVariables } from '../helpers/getEnvVariables';
 import { Navbar } from '../components/Navbar/Navbar';
 
 export const Newspaper = () => {
-  const [showAlert, setShowAlert] = useState(false)
 
   const handleStartEditArticle = (article) => {
-    console.log(article)
     starEditArticle(article)
   }
 
   const { articles } = useSelector((state) => state.article)
   const { openEditModal, openCreateModal } = useModalStore()
-  const { starEditArticle } = useArticleStore()
+  const { starEditArticle, startLodingsArticles } = useArticleStore()
+
+  useEffect(() => {
+    startLodingsArticles()
+  }, [])
+
+  console.log(articles)
+  
 
   return (
     <>
@@ -34,7 +39,7 @@ export const Newspaper = () => {
         <main className="container">
           {
             articles && articles.map(item => (
-              <ArticleModule1 key={item._id} title={item.title} summary={item.summary} _id={item._id} imageUrl={item.imageUrl} />
+              <ArticleModule1 key={item.id} title={item.title} summary={item.summary} _id={item._id} imageUrl={item.imageUrl} />
             ))
           }
         </main>

@@ -3,7 +3,7 @@ import './articleModule1.css';
 import { useModalStore } from '../../hooks/useModalStore';
 import { useArticleStore } from '../../hooks/useArticleStore';
 
-export const ArticleModule1 = ({ title, summary, imageUrl, _id }) => {
+export const ArticleModule1 = ({ title, summary, imageUrl, id }) => {
     const { openEditModal } = useModalStore()
     const { startEditArticle } = useArticleStore()
 
@@ -12,7 +12,7 @@ export const ArticleModule1 = ({ title, summary, imageUrl, _id }) => {
             title: title,
             summary: summary,
             imageUrl: imageUrl,
-            _id: _id,
+            id: id,
             onEditArticle: true,
         });
         openEditModal();

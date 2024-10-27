@@ -1,19 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fakeData } from '../../../fakeData/fakedata'
-
-const tempArticle = {
-    _id: new Date().getTime(),
-    title: 'Racing campeón',
-    summary: 'El primer grande tiene los colores màs lindos del mundo',
-    imageUrl: 'https://services.meteored.com/img/article/por-que-el-cielo-se-torna-naranja-durante-el-atardecer-1684769231676_1280.jpeg'
-};
-
 
 const initialState = {
-    articles: [
-        ...fakeData,
-        tempArticle
-    ],
+    isLoadingArticles: true,
+    articles: [],
     onEditArticle: null,
 }
 
@@ -21,12 +10,13 @@ export const articleSlice = createSlice({
     name: 'article',
     initialState,
     reducers: {
-        onSetEditArticle: (state, { payload }) => {
+        setEditArticle: (state, { payload }) => {
             state.onEditArticle = payload
         },
 
         createArticle: (state, { payload }) => {
             state.articles.push(payload);
+            console.log(payload)
             state.onEditArticle = null
         },
 
@@ -44,14 +34,26 @@ export const articleSlice = createSlice({
                 state.articles = state.articles.filter( article => article._id !== state.onEditArticle._id );
                 state.onEditArticle = null
             }
-        }
+        },
+
+        loadArticles: ( state, { payload } ) => {
+            state.isLoadingArticles = false;
+            // state.articles = payload;
+            payload.forEach( article => {
+                const exist = state.articles.some( dbArticle => dbArticle.id === article.id );
+                if(!exist) {
+                    state.articles.push(article)
+                }
+            })
+        },
 
     },
 })
 
 export const {
-    onSetEditArticle,
+    setEditArticle,
     createArticle,
     updateArticle,
-    deleteArticle
+    deleteArticle,
+    loadArticles
 } = articleSlice.actions
