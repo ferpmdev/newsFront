@@ -19,33 +19,6 @@ La aplicación permite a los usuarios:
 
 ### Estructura del Proyecto
 
-`my-news-app/
-├── public/
-│   └── index.html
-├── src/
-│   ├── api/
-│   │   ├── newsApi.js
-│   ├── components/
-│   │   └── ...
-│   ├── helpers/
-│   │   └── ...
-│   ├── hooks/
-│   │   └── useArticleStore.js
-│   │   └── useForm.js
-│   │   └── useLoginStore.js
-│   │   └── useModalStore.js
-│   ├── login/
-│   │   └── ...
-│   ├── Newspaper/
-│   │   └── ...
-│   ├── router/
-│   │   └── ...
-│   ├── store/
-│   │   └── ...
-│   ├── AppNews.js
-│   └── index.js
-├── package.json
-└── ...`
 - **api:** Configuración de la API para la gestión de datos de noticias.
 - **components:** Contiene los componentes funcionales de la aplicación (formularios, listas, etc.).
 - **features:** Organiza la lógica de cada funcionalidad (en este caso, las noticias) en slices independientes.
@@ -64,6 +37,9 @@ La aplicación permite a los usuarios:
 ### Instalación y Ejecución
 
 1. Clona el repositorio: `git clone https://github.com/ferpmdev/newsFront.git`
-2. Instala las dependencias: `npm install`
-3. Crea en la raíz del proyecto un archivo llamado `.env` con lo siguiente: `VITE_API_URL='https://backend-del-news-production.up.railway.app/api'`
-4. Inicia el servidor de desarrollo: `npm run dev`
+2. Ejecuta `cd newsFront`
+3. Verifica que te encuentras sobre la rama master.
+4. Crea en la raíz del proyecto un archivo llamado `.env` con lo siguiente: `VITE_API_URL='https://backend-del-news-production.up.railway.app/api'`
+5. Instala las dependencias: `npm install`
+6. Inicia el servidor de desarrollo: `npm run dev`
+7. Deberas contar con usuario y contraseña para poder ingresar.
