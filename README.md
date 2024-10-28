@@ -1,5 +1,3 @@
-# Readme
----
 ## CRUD de Noticias Periodísticas con React, Redux Toolkit y Custom Hooks
 
 ### Descripción
