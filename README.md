@@ -38,6 +38,6 @@ La aplicación permite a los usuarios:
 2. Ejecuta `cd newsFront`
 3. Verifica que te encuentras sobre la rama master.
 4. Crea en la raíz del proyecto un archivo llamado `.env` con lo siguiente: `VITE_API_URL='https://backend-del-news-production.up.railway.app/api'`
-5. Instala las dependencias: `npm install`
-6. Inicia el servidor de desarrollo: `npm run dev`
-7. Deberas contar con usuario y contraseña para poder ingresar.
+5. **Instalar dependencias:** Comprueba que en tu equipo tengas ya instalado node(v18.12.1 o superior) y npm(8.19.2 o superior), de lo contrario deberas instalarlo. Luego, instala las dependencias ejecutando: `npm i`
+6. **Iniciar el servidor:** Ejecuta `npm run dev`.
+7. Abre tu navegador con la url que sale en la consola. Deberas contar con usuario y contraseña para poder ingresar.
