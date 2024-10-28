@@ -1,8 +1,8 @@
 .cb {
     align-items: center;
-    background-color: rgb(202, 36, 36);
+    background-color: var(--live);
     border-radius: 50%;
-    color: rgb(224, 224, 223);
+    color: var(--light-gray);
     display: flex;
     font-size: 3.2vw;
     height: 5vw;
@@ -16,5 +16,5 @@
 }
 
 .cb:hover {
-    background-color: rgb(108, 34, 34);
+    background-color: var(--live-dark);
 }

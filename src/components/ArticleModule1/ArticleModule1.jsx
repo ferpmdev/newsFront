@@ -19,14 +19,16 @@ export const ArticleModule1 = ({ title, summary, imageUrl, id }) => {
     }
 
     return (
-            <article onClick={handleClickEdit} className="itemNews">
-                <img
-                    src={imageUrl}
-                    alt={title}
-                    className='img'
-                />
-                <h1 className='pt-serif-bold h1' >{title}</h1>
-                <h4 className='pt-serif-regular summary' >{summary}</h4>
-            </article>
+        <article onClick={handleClickEdit} className="itemNews">
+            <img
+                src={imageUrl}
+                alt={title}
+                className='img'
+            />
+            <section className="am-ct" >
+                <h1 className='pt-serif-regular am1-h1' >{title}</h1>
+                <h4 className='am1-summary' >{summary}</h4>
+            </section>
+        </article>
     )
 }
